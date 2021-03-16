@@ -13,5 +13,10 @@ use systeme\Controlleur\Controlleur;
 
 class AdminControlleur extends  Controlleur
 {
-
+protected  $nom_template='admin';
+    public function dashboard()
+    {
+        $variable['titre'] = "Dashboard";
+        return $this->render("admin/admin", $variable);
+    }
 }

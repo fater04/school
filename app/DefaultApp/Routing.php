@@ -23,3 +23,5 @@ App::post("/single-post", "default.single", "single")->avec("id", "['0-9']+");
 
 App::get("/gallerie", "default.gallerie", "gallerie");
 App::get("/staff", "default.staff", "staff");
+App::get("/dashboard", "admin.dashboard", "dashboard");
+

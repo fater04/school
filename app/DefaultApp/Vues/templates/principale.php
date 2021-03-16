@@ -178,8 +178,8 @@ use app\DefaultApp\DefaultApp as app;
             <div class="five columns">
 
                 <div class="widget widget_text" align="center">
-                    <img alt="logo" width="50%" src="<?= APP::autre('images/logopng.png') ?>"
-                         class="single-image img-responsive"/>
+                    <a href="<?=\app\DefaultApp\DefaultApp::genererUrl('dashboard')?>"><img alt="logo" width="50%" src="<?= APP::autre('images/logopng.png') ?>"
+                                    class="single-image img-responsive"/></a>
                     <p><span class="widget-title">Centre de Formation Moderne</span> <br/>Le meilleur choix pour une
                         bonne formation</p>
                 </div>
