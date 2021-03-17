@@ -7,6 +7,7 @@ use Delight\Auth\InvalidEmailException;
 use Delight\Auth\InvalidPasswordException;
 use Delight\Auth\NotLoggedInException;
 use Delight\Auth\Role;
+use Delight\Auth\Status;
 use Delight\Auth\TooManyRequestsException;
 use Delight\Auth\UnknownIdException;
 use Delight\Auth\UserAlreadyExistsException;
@@ -35,7 +36,7 @@ class Utilisateur extends Model
      */
     public function getId()
     {
-        return self::auth()->getUserId();
+        return $this->id;
     }
 
     /**
@@ -52,7 +53,7 @@ class Utilisateur extends Model
      */
     public function getRole()
     {
-        return self::auth()->getRoles();
+        return $this->role;
     }
 
     /**
@@ -231,7 +232,7 @@ class Utilisateur extends Model
      */
     public function getDateCreation()
     {
-        return $this->date_creation;
+        return Date('H:i d-m-Y ', $this->date_creation);
     }
 
     /**
@@ -247,7 +248,7 @@ class Utilisateur extends Model
      */
     public function getDerniereConnection()
     {
-        return $this->derniere_connection;
+        return Date('H:i d-m-Y ', $this->derniere_connection);
     }
 
     /**
@@ -284,6 +285,11 @@ class Utilisateur extends Model
         return self::auth()->getStatus();
     }
 
+    public static function getIdUser()
+    {
+        return self::auth()->getUserId();
+    }
+
 
     public static function userInfo($user_id, $nom, $prenom, $sexe, $telephone, $image)
     {
@@ -310,7 +316,6 @@ class Utilisateur extends Model
         }
     }
 
-
     public function ajouter()
     {
         try {
@@ -327,6 +332,54 @@ class Utilisateur extends Model
         }
 
         return $resultat;
+    }
+
+    public static function updatePassword($id, $pass)
+    {
+        $req = "update utilisateur set motdepasse='" . $pass . "' where id='" . $id . "'";
+
+        if (self::connection()->query($req)) {
+            $con = null;
+            return "ok";
+        } else {
+            $con = null;
+            return "non";
+        }
+    }
+    public function modifier()
+    {
+        $con = self::connection();
+        try {
+            $req1 = "update users  set email=:email,username=:username where id=:id";
+            $req2 = "update users_info  set nom=:nom,prenom=:prenom,sexe=:sexe,telephone=:telephone where user_id=:user_id";
+            $stmt1= $con->prepare($req1);
+            $stmt2 = $con->prepare($req2);
+            $param1 = array(
+                ":email" => $this->email,
+                ":username" => $this->pseudo,
+                ":id" => $this->id
+            );
+            $param2 = array(
+                ":nom" => $this->nom,
+                ":prenom" => $this->prenom,
+                ":sexe" => $this->sexe,
+                ":telephone" => $this->telephone,
+                ":user_id"=>$this->id
+            );
+            if ($stmt1->execute($param1)) {
+                if ($stmt2->execute($param2)) {
+                    return "ok";
+                } else {
+                    return "Oups une erreur s'est produite. veuillez réessayer !";
+
+                }
+            } else {
+                return "Oups une erreur s'est produite. veuillez réessayer !";
+
+            }
+        } catch (\Exception $ex) {
+            throw new \Exception($ex->getMessage());
+        }
     }
 
     public function ajouterOnline()
@@ -480,9 +533,11 @@ class Utilisateur extends Model
     public static function login($email, $password, $duree)
     {
         try {
+
             if ($duree != null) {
                 Auth::createRememberCookieName();
             }
+
             self::auth()->login($email, $password, $duree);
             return 'ok';
         } catch (\Delight\Auth\InvalidEmailException $e) {
@@ -500,8 +555,7 @@ class Utilisateur extends Model
     public static function logout()
     {
         try {
-            self::auth()->logOutEverywhereElse();
-            self::auth()->destroySession();
+            self::auth()->logOutEverywhere();
             return "ok";
         } catch (NotLoggedInException $e) {
             return 'Not logged in';
@@ -540,5 +594,88 @@ class Utilisateur extends Model
         }
     }
 
+    public static function count()
+    {
+        $con = self::connection();
+        $req = "select COUNT(*) as 'nb' from users ";
+        $rs = $con->query($req);
+        $data = $rs->fetch();
+        return $data['nb'];
 
+    }
+
+    public static function createRoles(){
+        $out = '';
+
+        foreach (Role::getMap() as $roleValue => $roleName) {
+            $out .= '<option value="' . $roleValue . '">' . $roleName . '</option>';
+        }
+
+        return $out;
+    }
+
+    public static function lastLogin()
+    {
+        $con = self::connection();
+        $req = "select id  from users order by id DESC limit 1";
+        $rs = $con->query($req);
+        $data = $rs->fetch();
+        return $data['id'];
+
+    }
+
+    public static function getRoleById($id)
+    {
+
+        $roles = '';
+        foreach (self::auth()->admin()->getRolesForUserById($id) as $r1) {
+            $roles .= $r1 . " ";
+        }
+        return $roles;
+    }
+
+    public static function blocker($id)
+    {
+        $con = self::connection();
+
+        $req = "update users set status=:status where  id=:id";
+        $stmt = $con->prepare($req);
+
+        if ($stmt->execute(array(
+            ":status" => Status::LOCKED,
+            ":id" => $id
+        ))) {
+            return "ok";
+        } else {
+            return "no";
+        }
+    }
+
+    public static function deblocker($id)
+    {
+        $con = self::connection();
+
+        $req = "update users set status=:status where  id=:id";
+        $stmt = $con->prepare($req);
+
+        if ($stmt->execute(array(
+            ":status" => Status::NORMAL,
+            ":id" => $id
+        ))) {
+            return "ok";
+        } else {
+            return "no";
+        }
+    }
+
+    public static function retournerNomComplet($id)
+    {
+        $con = self::connection();
+        $req = "select nom ,prenom from users_info where user_id='" . $id . "'";
+        $rs = $con->query($req);
+        $data = $rs->fetch();
+        $nom = strtoupper($data['nom']);
+        $prenom = ucfirst($data['prenom']);
+        return $prenom . " " . $nom;
+    }
 }

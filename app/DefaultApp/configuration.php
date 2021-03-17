@@ -2,7 +2,7 @@
 //configuration base de donnee
 $database = array(
     "serveur" => "localhost",
-    "nom_base" => "php_auth",
+    "nom_base" => "ecole",
     "utilisateur" => "root",
     "motdepasse" => "root"
 );

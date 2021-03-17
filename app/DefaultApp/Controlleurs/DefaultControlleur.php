@@ -9,11 +9,38 @@
 namespace app\DefaultApp\Controlleurs;
 
 use Delight\Auth\Auth;
+use Plasticbrain\FlashMessages\FlashMessages;
 use systeme\Controlleur\Controlleur;
 use systeme\Model\Utilisateur;
 
 class DefaultControlleur extends Controlleur
 {
+    public function login()
+    {
+        $variable['titre'] = "Login";
+        $msg = new FlashMessages();
+        $variable['titre'] = "Login";
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $pseudo = trim(addslashes($_POST['pseudo']));
+            $pass = trim(addslashes($_POST['pass']));
+            if (isset($_POST["remember"])) {
+                $rememberDuration = (int)(60 * 60 * 24 * 365.25);
+            } else {
+                $rememberDuration = null;
+            }
+            $resultat=Utilisateur::login($pseudo, $pass, $rememberDuration);
+
+            if ($resultat == 'ok') {
+                $msg->success('connection reussie');
+
+            }else{
+                $msg->error($resultat);
+
+            }
+        }
+        return $this->render("default/login", $variable);
+    }
+
     public function index()
     {
         $variable['active1'] = 'current-menu-item';
