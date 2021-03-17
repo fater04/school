@@ -12,6 +12,7 @@ namespace app\DefaultApp\Controlleurs;
 use app\DefaultApp\DefaultApp;
 use app\DefaultApp\Models\Annonce;
 use app\DefaultApp\Models\Contact;
+use app\DefaultApp\Models\Staff;
 use Plasticbrain\FlashMessages\FlashMessages;
 use systeme\Controlleur\Controlleur;
 use systeme\Model\Utilisateur;
@@ -37,7 +38,7 @@ class AdminControlleur extends Controlleur
 
     public function user()
     {
-        $msg = New FlashMessages();
+        $msg = new FlashMessages();
         $variable['titre'] = "Utilisateur";
         $variable['active5'] = "active";
 
@@ -67,7 +68,7 @@ class AdminControlleur extends Controlleur
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             $nom = DefaultApp::trimInput($_POST['nomcomplet']);
-            $email = DefaultApp ::trimInput($_POST['email']);
+            $email = DefaultApp::trimInput($_POST['email']);
             $pseudo = DefaultApp::trimInput($_POST['pseudo']);
             $role = DefaultApp::trimInput($_POST['role']);
             $password = DefaultApp::trimInput($_POST['password']);
@@ -81,27 +82,27 @@ class AdminControlleur extends Controlleur
                 $resultat = $user->ajouter();
                 if ($resultat == 'ok') {
                     Utilisateur::ajouterRole(Utilisateur::lastLogin(), $role);
-                    $msg->success("Utilisateur enregistré avec succes ",'utilisateurs');
+                    $msg->success("Utilisateur enregistré avec succes ", 'utilisateurs');
                 } else {
                     $msg->error($resultat);
                 }
             }
             if (isset($_POST['edit-user'])) {
-                $id=DefaultApp::trimInput($_POST['user_id']);
+                $id = DefaultApp::trimInput($_POST['user_id']);
                 $old_role = DefaultApp::trimInput($_POST['old_role']);
                 $user = new Utilisateur();
                 $user->setId($id);
                 $user->setNom($nom);
                 $user->setEmail($email);
                 $user->setPseudo($pseudo);
-                $resultat=$user->modifier();
+                $resultat = $user->modifier();
                 if ($resultat == 'ok') {
                     if ($password != "**********") {
-                        Utilisateur::changerMotdepasse($id,$password);
+                        Utilisateur::changerMotdepasse($id, $password);
                     }
-                    Utilisateur::retirerRole($id,$old_role);
-                    Utilisateur::ajouterRole($id,$role);
-                    $msg->success("Utilisateur modifié avec succes ",'utilisateurs');
+                    Utilisateur::retirerRole($id, $old_role);
+                    Utilisateur::ajouterRole($id, $role);
+                    $msg->success("Utilisateur modifié avec succes ", 'utilisateurs');
                 } else {
                     $msg->error($resultat);
                 }
@@ -109,22 +110,22 @@ class AdminControlleur extends Controlleur
             }
         }
 
-        $utilisateur = New Utilisateur();
+        $utilisateur = new Utilisateur();
         $variable['listeutilisateur'] = $utilisateur->lister();
         return $this->render("admin/user", $variable);
     }
 
     public function contact()
     {
-        $msg = New FlashMessages();
-        $contacts = New Contact();
+        $msg = new FlashMessages();
+        $contacts = new Contact();
         $variable['titre'] = "Contact";
         if ($_SERVER['REQUEST_METHOD'] == "GET") {
             if (isset($_GET['id'])) {
-                    $resultat = Contact::supprimer($_GET['id']);
-                    if ($resultat == "ok") {
-                        $msg->error("Suprime avec Succes ", "list-contact");
-                    }
+                $resultat = Contact::supprimer($_GET['id']);
+                if ($resultat == "ok") {
+                    $msg->error("Suprime avec Succes ", "list-contact");
+                }
             }
         }
 
@@ -134,21 +135,21 @@ class AdminControlleur extends Controlleur
 
     public function annonces()
     {
-        $msg = New FlashMessages();
-        $annonces = New Annonce();
+        $msg = new FlashMessages();
+        $annonces = new Annonce();
         $variable['titre'] = "Annonce";
         if ($_SERVER['REQUEST_METHOD'] == "GET") {
             if (isset($_GET['id'])) {
-                    $resultat = Annonce::supprimer($_GET['id']);
-                    if ($resultat == "ok") {
-                        $msg->error("Suprime avec Succes ", "annonces");
-                    }
+                $resultat = Annonce::supprimer($_GET['id']);
+                if ($resultat == "ok") {
+                    $msg->error("Suprime avec Succes ", "annonces");
+                }
             }
         }
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             $titre = DefaultApp::trimInput($_POST['titre']);
-            $note = DefaultApp ::trimInput($_POST['note']);
+            $note = DefaultApp::trimInput($_POST['note']);
 
             if (isset($_POST['save'])) {
                 $an = new Annonce();
@@ -156,35 +157,53 @@ class AdminControlleur extends Controlleur
                 $an->setDescription($note);
                 $resultat = $an->ajouter();
                 if ($resultat == 'ok') {
-                    $msg->success("enregistré avec succes ",'annonces');
+                    $msg->success("enregistré avec succes ", 'annonces');
                 } else {
                     $msg->error($resultat);
                 }
             }
-//            if (isset($_POST['edit-user'])) {
-//                $id=DefaultApp::trimInput($_POST['user_id']);
-//                $old_role = DefaultApp::trimInput($_POST['old_role']);
-//                $user = new Utilisateur();
-//                $user->setId($id);
-//                $user->setNom($nom);
-//                $user->setEmail($email);
-//                $user->setPseudo($pseudo);
-//                $resultat=$user->modifier();
-//                if ($resultat == 'ok') {
-//                    if ($password != "**********") {
-//                        Utilisateur::changerMotdepasse($id,$password);
-//                    }
-//                    Utilisateur::retirerRole($id,$old_role);
-//                    Utilisateur::ajouterRole($id,$role);
-//                    $msg->success("Utilisateur modifié avec succes ",'utilisateurs');
-//                } else {
-//                    $msg->error($resultat);
-//                }
-//
-//            }
         }
         $variable['annonces'] = $annonces->lister();
         return $this->render("admin/annonces", $variable);
+    }
+
+    public function staff()
+    {
+        $msg = new FlashMessages();
+        $staffs = new Staff();
+        $variable['titre'] = "Staff";
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
+            if (isset($_GET['id'])) {
+                $resultat = Staff::supprimer($_GET['id']);
+                if ($resultat == "ok") {
+                    $msg->error("Suprime avec Succes ", "list-staff");
+                }
+            }
+        }
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $nomcomplet = DefaultApp::trimInput($_POST['nomcomplet']);
+            $poste = DefaultApp::trimInput($_POST['poste']);
+            $photo = "";
+            if (isset($_FILES['image']['name'])) {
+                $image = new \app\DefaultApp\Models\Image($_FILES['image']['name']);
+                $image->Upload();
+                $photo = $image->getSrc();
+            }
+            if (isset($_POST['ajouter'])) {
+                $an = new Staff();
+                $an->setNomComplet($nomcomplet);
+                $an->setPoste($poste);
+                $an->setImage($photo);
+                $resultat = $an->ajouter();
+                if ($resultat == 'ok') {
+                    $msg->success("enregistré avec succes ", 'list-staff');
+                } else {
+                    $msg->error($resultat);
+                }
+            }
+        }
+        $variable['staffs'] = $staffs->lister();
+        return $this->render("admin/staff", $variable);
     }
 
     public function change_password($id)
@@ -198,10 +217,10 @@ class AdminControlleur extends Controlleur
             $password1 = trim(addslashes($_POST['password1']));
             $password2 = trim(addslashes($_POST['password2']));
             if ($password1 === $password2) {
-                $r = Utilisateur::changerMotdepasse($id,$password2);
+                $r = Utilisateur::changerMotdepasse($id, $password2);
                 if ($r == 'ok') {
                     $msg->success("Mot de passe modifié avec succès ! ");
-                    $variable['rediriger'] = "<script> setTimeout(\"location . href = '".DentAPP::genererUrl('logout')."';\",3000);</script>";
+                    $variable['rediriger'] = "<script> setTimeout(\"location . href = '" . DentAPP::genererUrl('logout') . "';\",3000);</script>";
 
 
                 } else {

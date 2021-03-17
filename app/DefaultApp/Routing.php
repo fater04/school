@@ -36,6 +36,8 @@ App::post("/utilisateurs", "admin.user", "user");
 App::get("/list-contact", "admin.contact", "list-contact");
 App::get("/annonces", "admin.annonces", "annonces");
 App::post("/annonces", "admin.annonces", "annonces");
+App::get("/list-staff", "admin.staff", "list-staff");
+App::post("/list-staff", "admin.staff", "list-staff");
 
 
 

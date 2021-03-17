@@ -56,7 +56,7 @@ if (!Utilisateur::auth()->isLoggedIn()) {
                             class="fa fa-fw fa-clipboard-list"></i> Annonces</a></li>
             <li><a href="<?= \app\DefaultApp\DefaultApp::genererUrl('dashboard') ?>"><i class="fa fa-fw fa-images"></i>
                     Gallerie</a></li>
-            <li><a href="<?= \app\DefaultApp\DefaultApp::genererUrl('dashboard') ?>"><i class="fa fa-fw fa-images"></i>
+            <li><a href="<?= \app\DefaultApp\DefaultApp::genererUrl('list-staff') ?>"><i class="fa fa-fw fa-images"></i>
                     Staff</a></li>
             <li><a href="<?= \app\DefaultApp\DefaultApp::genererUrl('dashboard') ?>"><i class="fa fa-fw fa-folder"></i>
                     Admission</a></li>
