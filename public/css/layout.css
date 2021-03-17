@@ -1,12 +1,8 @@
-
-
 /* #Media Queries
 ================================================== */
 
 	/* Smaller than standard 960 (devices and browsers) */
 	@media only screen and (max-width: 959px) {
-		
-	
 	}
 
 	/* Tablet Portrait size to standard 960 (devices and browsers) */
@@ -23,7 +19,7 @@
 		/*	Wrapper
 		/* ---------------------------------------------------------------------- */
 
-		.boxed #wrapper { width: 768px; }
+		.boxed #wrapper { width: 100%; }
 		
 		/* ---------------------------------------------------------------------- */
 		/*	Header
@@ -101,7 +97,7 @@
 		/*	Wrapper
 		/* ---------------------------------------------------------------------- */
 
-		.boxed #wrapper { width: 300px; }	
+		.boxed #wrapper { width: 100%; }
 		
 		/* ---------------------------------------------------------------------- */
 		/*	Slider
@@ -340,7 +336,7 @@
 		/*	Wrapper
 		/* ---------------------------------------------------------------------- */
 
-		.boxed #wrapper { width: 420px; }
+		.boxed #wrapper { width: 100%; }
 		
 		/* ---------------------------------------------------------------------- */
 		/*	Widgets + Shortcodes
@@ -712,4 +708,3 @@
 	.scribble .detail-box.stateColor .icons-refresh			{ background-position: -2025px -45px; }
 	.scribble .detail-box.stateColor .icons-earth			{ background-position: -2070px -45px; }
 	.scribble .detail-box.stateColor .icons-house			{ background-position: -2115px -45px; }
-

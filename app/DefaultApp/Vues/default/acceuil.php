@@ -1,6 +1,6 @@
 <div class="slider">
 
-    <div class="container">
+    <div class="container-fluid">
 
         <div class="sixteen columns">
 
@@ -100,11 +100,11 @@
 
 <section id="content">
 
-    <div class="container">
+    
 
         <div class="detail-holder clearfix">
 
-            <div class="four columns">
+            <div class="four columns col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <div class="detail-box">
                     <div class="detail-entry">
                         <i class="detail-icon icons-mail"></i>
@@ -117,7 +117,7 @@
                 </div>
             </div>
 
-            <div class="four columns">
+            <div class="four columns col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <div class="detail-box">
                     <div class="detail-entry">
                         <i class="detail-icon icons-users"></i>
@@ -128,7 +128,7 @@
                 </div>
             </div>
 
-            <div class="four columns">
+            <div class="four columns col-lg-3 col-md-3 col-sm-12 col-xs-12">
 
                 <div class="detail-box">
 
@@ -142,7 +142,7 @@
                 </div>
             </div>
 
-            <div class="four columns">
+            <div class="four columns col-lg-3 col-md-3 col-sm-12 col-xs-12">
 
                 <div class="detail-box">
 
@@ -160,7 +160,8 @@
 
         <div class="clear"></div>
         <div class="divider-solid"></div>
-
+        
+    <div class="container">
         <aside id="sidebar" class="four columns">
             <h4 style="text-transform: uppercase;">à la Une</h4>
             <ul class="ajax-nav" >
@@ -208,6 +209,7 @@
             </div>
 
         </section>
+        
         <div class="clear"></div>
         <div class="divider-solid"></div>
     </div>

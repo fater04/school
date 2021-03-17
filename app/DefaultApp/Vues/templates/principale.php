@@ -45,7 +45,7 @@ use app\DefaultApp\DefaultApp as app;
     <header id="header">
         <div class="container">
 
-            <div class="eight columns">
+            <div class="eight columns col-md-5 col-xs-12">
 
                 <div id="logo">
                     <a href="/"><img width="85px" height="10px"
@@ -53,9 +53,9 @@ use app\DefaultApp\DefaultApp as app;
                                      alt="logo"></a>
                 </div><!--/ #logo-->
 
-            </div><!--/ .columns-->
+            </div>
 
-            <div class="eight columns">
+            <div class="eight columns col-md-7 col-xs-12">
 
                 <div class="widget widget_contacts">
 
@@ -149,19 +149,6 @@ use app\DefaultApp\DefaultApp as app;
 
                     </nav>
 
-                    <div class="search-wrapper">
-
-                        <form method="post" action="#">
-
-                            <p>
-                                <input name="s" id="s" type="text">
-                                <button type="submit" class="submit-search">Search</button>
-                            </p>
-
-                        </form>
-
-                    </div>
-
                 </div>
             </div>
 
@@ -174,8 +161,8 @@ use app\DefaultApp\DefaultApp as app;
     ?>
     <footer id="footer">
 
-        <div class="container">
-            <div class="five columns">
+        <div class="container-fluid">
+            <div class="five columns col-md-4">
 
                 <div class="widget widget_text" align="center">
                     <a href="<?=\app\DefaultApp\DefaultApp::genererUrl('dashboard')?>"><img alt="logo" width="50%" src="<?= APP::autre('images/logopng.png') ?>"
@@ -185,7 +172,7 @@ use app\DefaultApp\DefaultApp as app;
                 </div>
             </div>
 
-            <div class="five columns">
+            <div class="five columns col-md-4">
                 <div class="widget widget_text">
                     <h3 class="widget-title" style="color:#CCC;">Nos Coordonnées</h3>
 
@@ -204,7 +191,7 @@ use app\DefaultApp\DefaultApp as app;
 
             </div>
 
-            <div class="five columns">
+            <div class="five columns col-md-4">
 
                 <div class="widget widget_text">
 
@@ -222,7 +209,6 @@ use app\DefaultApp\DefaultApp as app;
 
                 </div>
             </div>
-
 
             <div class="clear"></div>
 
