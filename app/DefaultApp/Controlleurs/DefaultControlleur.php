@@ -8,6 +8,9 @@
 
 namespace app\DefaultApp\Controlleurs;
 
+use app\DefaultApp\Models\Annonce;
+use app\DefaultApp\Models\Galerie;
+use app\DefaultApp\Models\Staff;
 use Delight\Auth\Auth;
 use Plasticbrain\FlashMessages\FlashMessages;
 use systeme\Controlleur\Controlleur;
@@ -45,6 +48,11 @@ class DefaultControlleur extends Controlleur
     {
         $variable['active1'] = 'current-menu-item';
         $variable['titre'] = "Acceuil";
+
+        $annonce=new Annonce();
+        $listeAnnonce=$annonce->lister();
+        $variable['listeAnnonce']=$listeAnnonce;
+
         return $this->render("default/acceuil", $variable);
     }
 
@@ -91,6 +99,13 @@ class DefaultControlleur extends Controlleur
     {
         $variable['active4'] = 'current-menu-item';
         $variable['titre'] = "Staff";
+        $st=new Staff();
+        $listeStaff=$st->lister();
+        $variable['listeStaff']=$listeStaff;
+
+        $ga=new Galerie();
+        $listeGalerie=$ga->lister();
+        $variable['listeGalerie']=$listeGalerie;
         return $this->render("default/staff", $variable);
     }
 

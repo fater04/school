@@ -8,14 +8,9 @@
 ?>
 <section id="content" class="sbr">
 
-    <div class="container clearfix">
-
-        <div class="page-header clearfix">
-
+    <div class="container-fluid clearfix">
+        <br>
             <h1>Actualites</h1><span style="padding-left:10px;">Vous êtes ici : Accueil > Articles</span>
-
-        </div>
-
 
         <section id="main" class="twelve columns">
 
@@ -28,10 +23,6 @@
                     <span class="author"><a href="#">par Monsieur Websco</a></span>
                 </div><!--/ .entry-meta-->
                 <img src="images/blog/blog-img-1.jpg" alt="" >
-
-
-
-
 
                 <div class="entry-body">
 

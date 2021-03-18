@@ -23,8 +23,9 @@ class AdminControlleur extends Controlleur
 
     public function dashboard()
     {
+        echo "ici";
         $variable['titre'] = "Dashboard";
-        return $this->render("admin/admin", $variable);
+        $this->render("admin/admin", $variable);
     }
 
     public function logout()

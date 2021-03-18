@@ -7,23 +7,21 @@
             <div class="flexslider">
 
                 <ul class="slides">
-
                     <li>
                         <div class="preloader">
-                            <a href="#" class="bwWrapper"><img src="public/images/sliders/flexslider/etab.jpg"></a>
+                            <a href="#" class="bwWrapper"><img src="app/DefaultApp/public/slides/2.jpg"></a>
                         </div>
                         <section class="caption">
                             <h4>
-                                <a title="Thinking up New Projects" href="#">Osez l'innovation</a>
+                                <a title="Thinking up New Projects" href="#">CFM ( centre de formation moderne )</a>
                             </h4>
-                            <p class="desc">Valorisez votre établissement, ses acteurs, ses initiatives grâce au
-                                diaporama modifiable. Car l'école est un lieu d'apprentissage, d'échange, de
-                                partage...un lieu de vie ! </p>
+                            <p class="desc">Le meilleur choix pour une bonne formation</p>
                         </section>
                     </li>
+
                     <li>
                         <div class="preloader">
-                            <a href="#" class="bwWrapper"><img src="public/images/sliders/flexslider/students.jpg"></a>
+                            <a href="#" class="bwWrapper"><img src="app/DefaultApp/public/slides/1.jpg"></a>
                         </div>
                         <section class="caption ">
                             <h4>
@@ -34,60 +32,48 @@
                                 image </p>
                         </section>
                     </li>
-<!--                    <li>-->
-<!--                        <div class="preloader">-->
-<!--                            <a href="#" class="bwWrapper"><img src="public/images/sliders/flexslider/climb.jpg"></a>-->
-<!--                        </div>-->
-<!--                        <section class="caption mixed-bg-3">-->
-<!--                            <h4>-->
-<!--                                <a title="Goodnex is amazing premium Wordpress Theme" href="#">Conçu pour vos-->
-<!--                                    visiteurs</a>-->
-<!--                            </h4>-->
-<!--                            <p class="desc">Avec une présentation claire, attrayante, un menu de navigation-->
-<!--                                agréable, des informations clairement identifiables ... </p>-->
-<!--                        </section>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="preloader">-->
-<!--                            <a href="#" class="bwWrapper"><img src="public/images/sliders/flexslider/tableaub.jpg"></a>-->
-<!--                        </div>-->
-<!--                        <section class="caption mixed-bg-4">-->
-<!--                            <h4>-->
-<!--                                <a title="We Do Not Need Words, We Just Create" href="#">Multi-utilisateurs</a>-->
-<!--                            </h4>-->
-<!--                            <p class="desc">Tout le monde peut participer à la vie de votre site internet</p>-->
-<!--                        </section>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="preloader">-->
-<!--                            <a href="#" class="bwWrapper"><img-->
-<!--                                        src="public/images/sliders/flexslider/soutien.jpg"></a>-->
-<!--                        </div>-->
-<!--                        <section class="caption mixed-bg-5">-->
-<!--                            <h4>-->
-<!--                                <a title="We Do Not Need Words, We Just Create" href="#">Riche en-->
-<!--                                    fonctionnalités</a>-->
-<!--                            </h4>-->
-<!--                            <p class="desc">Compatible smatphones et tablettes, moteur de recherche interne, flux-->
-<!--                                RSS, raccourcis de navigation, articles à la une, planche de contact GoogleMap-->
-<!--                                ... </p>-->
-<!--                        </section>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="preloader">-->
-<!--                            <a href="#" class="bwWrapper"><img src="public/images/sliders/flexslider/bibli.jpg"></a>-->
-<!--                        </div>-->
-<!--                        <section class="caption mixed-bg-6">-->
-<!--                            <h4>-->
-<!--                                <a title="We Do Not Need Words, We Just Create" href="#">Valorisez votre-->
-<!--                                    communication</a>-->
-<!--                            </h4>-->
-<!--                            <p class="desc">et mettez du lien à votre politique d'information, grâce à un site-->
-<!--                                internet répondant à l'appel d'un public de plus en plus exigent et demandeur du-->
-<!--                                média internet. </p>-->
-<!--                        </section>-->
-<!--                    </li>-->
 
+                    <li>
+                        <div class="preloader">
+                            <a href="#" class="bwWrapper"><img src="app/DefaultApp/public/slides/3.jpg"></a>
+                        </div>
+                        <section class="caption ">
+                            <h4>
+                                <a title="We create to make your life easier" href="#">Un reflet de votre
+                                    établissement</a>
+                            </h4>
+                            <p class="desc">Le site internet se doit aussi d'être un vecteur positif de votre
+                                image </p>
+                        </section>
+                    </li>
+
+                    <li>
+                        <div class="preloader">
+                            <a href="#" class="bwWrapper"><img src="app/DefaultApp/public/slides/4.jpg"></a>
+                        </div>
+                        <section class="caption ">
+                            <h4>
+                                <a title="We create to make your life easier" href="#">Un reflet de votre
+                                    établissement</a>
+                            </h4>
+                            <p class="desc">Le site internet se doit aussi d'être un vecteur positif de votre
+                                image </p>
+                        </section>
+                    </li>
+
+                    <li>
+                        <div class="preloader">
+                            <a href="#" class="bwWrapper"><img src="app/DefaultApp/public/slides/5.jpg"></a>
+                        </div>
+                        <section class="caption ">
+                            <h4>
+                                <a title="We create to make your life easier" href="#">Un reflet de votre
+                                    établissement</a>
+                            </h4>
+                            <p class="desc">Le site internet se doit aussi d'être un vecteur positif de votre
+                                image </p>
+                        </section>
+                    </li>
                 </ul>
 
             </div>
@@ -175,29 +161,27 @@
             <div class="ajax-content">
                 <ul>
                     <li class="ajax-navigation-item">
-                        <h4 class="content-title">L'Histoire des Arts</h4>
-                        <p>
-                            Sed velit tellus, posuere in diam sit amet, dignissim molestie arcu. In id iaculis est.
-                            Nunc felis velit, placerat in quam ac,
-                            condimentum fringilla ipsum. Donec cursus nisl vestibulum quam eleifend, vel consectetur
-                            tortor sagittis. Nulla eu nibh felis.
-                            Cras quis placerat est. In non dolor eleifend, aliquet nisl a, congue velit. Nullam
-                            ipsum massa, molestie sed lacinia eget,
-                            lacinia nec mauris. Donec non risus eu dolor accumsan varius id sed sem.
-                        </p>
-                        <p>
-                            Sed velit tellus, posuere in diam sit amet, dignissim molestie arcu. In id iaculis est.
-                            Nunc felis velit, placerat in quam ac,
-                            condimentum fringilla ipsum. Donec cursus nisl vestibulum quam eleifend, vel consectetur
-                            tortor sagittis. Nulla eu nibh felis.
-                            Cras quis placerat est. In non dolor eleifend, aliquet nisl a, congue velit. Nullam
-                            ipsum massa, molestie sed lacinia eget,
-                            lacinia nec mauris. Donec non risus eu dolor accumsan varius id sed sem.
-                        </p>
+                        <?php
+                        if(isset($listeAnnonce)){
+                            if(count($listeAnnonce)>0){
+                                foreach ($listeAnnonce as $annonce){
+                                    ?>
+                                    <div class="card">
+                                    <h1 class=""><?= ucfirst(stripslashes($annonce->getTitre())) ?></h1>
+                                    <span style="font-weight: bold">Date : <?=$annonce->getDate()?></span>
+
+                                    <?= html_entity_decode($annonce->getDescription()) ?>
+                                    </div>
+                                    <hr>
+                                    <?php
+                                }
+                            }
+                        }
+                        ?>
 
                     </li>
-                    <li class="ajax-navigation-item">
 
+                    <li class="ajax-navigation-item">
                         <iframe align="top" class="gcalendar" frameborder="0" height="500" id="gcalendar_frame"
                                 src="http://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=MONTH&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;hl=fr-FR&amp;height=500&amp;src=0831053u%40ac-nice.fr&amp;color=%232952A3"
                                 width="100%">No Iframes supported by your browser

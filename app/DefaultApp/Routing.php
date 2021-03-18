@@ -28,7 +28,6 @@ App::get("/gallerie", "default.gallerie", "gallerie");
 App::get("/staff", "default.staff", "staff");
 
 
-
 App::get("/dashboard", "admin.dashboard", "dashboard");
 App::get("/utilisateurs", "admin.user", "user");
 App::post("/utilisateurs", "admin.user", "user");

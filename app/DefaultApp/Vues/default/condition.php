@@ -8,13 +8,9 @@
 ?>
 <section id="content">
 
-    <div class="container clearfix">
-        <div class="page-header clearfix">
-
-            <h1>Condition d'admission</h1><span style="padding-left:10px;">Vous êtes ici : Accueil > Admission > Condition d'admission</span>
-
-        </div>
-
+    <div class="container-fluid clearfix">
+        <br>
+            <h1>Condition d'admission</h1>
         <div class="sixteen columns">
             <p>
                 <strong>Admission au CFM</strong><br/>
@@ -61,7 +57,7 @@
                            l’enfant</li>
     <li>- Frais d’inscription de ....</li>
 </ul> </p>
-            <a href="javascript:void(0)" style="color:#bb2c14">Remplir le formulaire d'inscription</a>
+            <a href="<?=\app\DefaultApp\DefaultApp::genererUrl('formulaire') ?>" style="color:#bb2c14;display: none">Remplir le formulaire d'inscription</a>
         </div>
 
     </div>

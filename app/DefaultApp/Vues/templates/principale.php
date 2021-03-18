@@ -80,12 +80,8 @@ use app\DefaultApp\DefaultApp as app;
                     <ul class="social-icons">
                         <li class="twitter"><a href="#">Twitter</a></li>
                         <li class="facebook"><a href="#">Facebook</a></li>
-                        <li class="dribble"><a href="#">Dribble</a></li>
-                        <li class="vimeo"><a href="#">Vimeo</a></li>
                         <li class="youtube"><a href="#">Youtube</a></li>
-                        <li class="rss"><a href="#">Rss</a></li>
                     </ul>
-
                 </div>
 
             </div>
@@ -93,11 +89,8 @@ use app\DefaultApp\DefaultApp as app;
             <div class="clear"></div>
 
             <div class="sixteen columns">
-
                 <div class="menu-container clearfix">
-
-                    <nav id="navigation" class="navigation clearfix">
-
+                    <nav id="navigation" class="navigation clearfi">
                         <div class="menu">
                             <ul>
                                 <li class="<?php if (isset($active1)) {
@@ -105,48 +98,47 @@ use app\DefaultApp\DefaultApp as app;
                                 } ?>">
                                     <a href="<?= app::genererUrl('Accueil') ?>">Accueil</a>
                                 </li>
-                                <li class="<?php if (isset($active6)) {
+
+                                <li class="<?php
+                                if (isset($active6)) {
                                     echo $active6;
-                                } ?>">
-                                    <a href="javascript:void(0)">QUI-SOMMES-NOUS</a>
-                                    <ul>
-                                        <li><a href="<?= app::genererUrl('presentation') ?>">Presentation</a></li>
-                                        <li><a href="<?= app::genererUrl('historique') ?>">Historique</a></li>
-                                    </ul>
-                                </li>
-                                <li class="<?php if (isset($active5)) {
-                                    echo $active5;
-                                } ?>">
-                                    <a href="javascript:void(0)">Admission</a>
-                                    <ul>
-                                        <li><a href="<?= app::genererUrl('condition') ?>">Condition </a></li>
-                                        <li><a href="<?= app::genererUrl('formulaire') ?>">Formulaire</a></li>
-                                    </ul>
-                                </li>
+                                }
+                                ?>"><a href="<?= app::genererUrl('presentation') ?>">À propos</a></li>
+
+                                <li class="<?php
+                                if (isset($active4)) {
+                                    echo $active4;
+                                }
+                                ?>"><a href="<?= app::genererUrl('staff') ?>">Staff / Galerie</a></li>
+
+
                                 <li class="<?php
                                 if (isset($active3)) {
                                     echo $active3;
                                 }
                                 ?>"><a href="<?= app::genererUrl('actualites') ?>">Actualites & Evennements</a></li>
-                                <li class="<?php if (isset($active4)) {
-                                    echo $active4;
-                                } ?>">
-                                    <a href="javascript:void(0)">Galerie</a>
-                                    <ul>
-                                        <li><a href="<?= app::genererUrl('staff') ?>">STAFF</a></li>
-                                        <li><a href="<?= app::genererUrl('gallerie') ?>">GALLERIE</a></li>
-                                    </ul>
-                                </li>
 
+                                <li class="<?php
+                                if (isset($active5)) {
+                                    echo $active5;
+                                }
+                                ?>"><a href="<?= app::genererUrl('condition') ?>">Admission</a></li>
 
                                 <li class="<?php
                                 if (isset($active2)) {
                                     echo $active2;
                                 }
                                 ?>"><a href="<?= app::genererUrl('contact') ?>">Contact</a></li>
+
+
+
+                                <li class="<?php
+                                if (isset($active2)) {
+                                    echo $active2;
+                                }
+                                ?>"><a target="_blank" href="https://intello.ht">Plateforme</a></li>
                             </ul>
                         </div>
-
                     </nav>
 
                 </div>

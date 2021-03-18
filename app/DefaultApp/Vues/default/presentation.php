@@ -7,14 +7,27 @@
  **/
 ?>
 <section id="content">
+    <div class="container-fluid clearfix">
+        <br>
+        <h1>Historique</h1>
+        <div class="sixteen columns">
+            <p>
+                Fondé le 8 octobre 1984 par Monsieur Lévy Acvilien, le Centre de Formation Moderne êtait dans un petit
+                local, situé au numéro 375, rue du Centre .Deux ans après ,on a dû laisser pour se rendre au numéro 55,
+                rue Joseph Janvier où on a passé presque deux décénies.Mais la vision d'une bonne formation exigait un
+                local plus adapté.
+            </p>
+            <p> En 2003, l'administration de l'école a fait l'acquisition du terrain où se situe l'école
+                aujourd'hui,Avenue Lamartinière, Bois-Verna # 46.Rapidement on a planifié de construire et de transférer
+                l'institution.Effectivement en septembre 2004 le tranfert a été fait.Et depuis lors, l'école fonctionne
+                à cette adresse.
 
-    <div class="container clearfix">
-        <div class="page-header clearfix">
 
-            <h1>Présentation</h1><span style="padding-left:10px;">Vous êtes ici : Accueil > Qui-Sommes-nous > Présentation</span>
-
+            </p>
         </div>
 
+        <hr>
+        <h1>Présentation</h1>
         <div class="sixteen columns">
             <p>Le <strong>Centre de Formation Moderne</strong>
                 est une école d’enseignement préscolaire, fondamental et secondaire. CFM
@@ -157,8 +170,6 @@
                 beaucoup de problèmes à résoudre, beaucoup d’obstacles à surmonter en vue de parvenir à notre fin.
             </p>
         </div>
-
     </div>
-
 </section>
 

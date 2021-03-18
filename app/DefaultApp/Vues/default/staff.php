@@ -10,19 +10,15 @@
 
 <section id="content">
 
-    <div class="container clearfix">
-        <div class="page-header clearfix">
-
-            <h1>Staff</h1><span style="padding-left:10px;">Vous êtes ici : Accueil > Gallerie > Staff</span>
-
-        </div>
-
+    <div class="container-fluid clearfix">
         <div class="sixteen columns">
-                <style>
+            <h1>Staff</h1>
+            <style>
                 * {
                     box-sizing: border-box;
                 }
-         /* Center website */
+
+                /* Center website */
                 .main {
                     max-width: 1000px;
                     margin: auto;
@@ -76,44 +72,50 @@
                     }
                 }
             </style>
-
             <div class="row">
-                <div class="column">
-                    <div class="content">
-                        <img src="https://via.placeholder.com/500" alt="Mountains" style="width:100%">
-                        <h3>JOHN SMITH DELVA <br/> <small>Professeur</small></h3>
-                    </div>
-                </div> <div class="column">
-                    <div class="content">
-                        <img src="https://via.placeholder.com/500" alt="Mountains" style="width:100%">
-                        <h3>JOHN SMITH DELVA <br/> <small>Professeur</small></h3>
-                    </div>
-                </div> <div class="column">
-                    <div class="content">
-                        <img src="https://via.placeholder.com/500" alt="Mountains" style="width:100%">
-                        <h3>JOHN SMITH DELVA <br/> <small>Professeur</small></h3>
-                    </div>
-                </div> <div class="column">
-                    <div class="content">
-                        <img src="https://via.placeholder.com/500" alt="Mountains" style="width:100%">
-                        <h3>JOHN SMITH DELVA <br/> <small>Professeur</small></h3>
-                    </div>
-                </div> <div class="column">
-                    <div class="content">
-                        <img src="https://via.placeholder.com/500" alt="Mountains" style="width:100%">
-                        <h3>JOHN SMITH DELVA <br/> <small>Professeur</small></h3>
-                    </div>
-                </div> <div class="column">
-                    <div class="content">
-                        <img src="https://via.placeholder.com/500" alt="Mountains" style="width:100%">
-                        <h3>JOHN SMITH DELVA <br/> <small>Professeur</small></h3>
-                    </div>
-                </div>
-
+                <?php
+                if (isset($listeStaff)) {
+                    if (count($listeStaff) > 0) {
+                        foreach ($listeStaff as $staff) {
+                            ?>
+                            <div class="col-md-3 col-xs-6">
+                                <div class="content">
+                                    <img src="<?= $staff->getImage(); ?>" alt="Mountains"
+                                         style="width:100%;height: 260px">
+                                    <h3><?= strtoupper($staff->nomcomplet) ?> <br/>
+                                        <small><?= ucfirst($staff->getPoste()) ?></small></h3>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                }
+                ?>
             </div>
 
-
         </div>
+        <hr>
+        <div class="sixteen columns">
+            <h1>Galerie</h1>
+            <div class="row">
+
+                <?php
+                if (isset($listeGalerie)) {
+                    if (count($listeGalerie) > 0) {
+                        foreach ($listeGalerie as $ga) {
+                            ?>
+                            <div style="margin-bottom: 10px" class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                <img style="width:100%;height: 260px" src="<?= $ga->image ?>" class="img-responsive">
+                            </div>
+                            <?php
+                        }
+                    }
+                }
+                ?>
+            </div>
+        </div>
+
+        <hr>
 
     </div>
 

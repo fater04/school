@@ -1218,6 +1218,11 @@ ul.social-icons li a {
     transition: all 0.25s linear 0s;
 }
 
+ul.social-icons li.intello a {
+    background-position: 0 0;
+}
+
+
 ul.social-icons li.twitter a {
     background-position: 0 0;
 }

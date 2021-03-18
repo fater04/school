@@ -8,12 +8,9 @@
 ?>
 <section id="content">
 
-    <div class="container clearfix">
-        <div class="page-header clearfix">
-
-            <h1>Formualire d'admission</h1><span style="padding-left:10px;">Vous êtes ici : Accueil > Admission > Formulaire d'admission</span>
-
-        </div>
+    <div class="container-fluid clearfix">
+            <br>
+            <h1>Formualire d'admission</h1>
 
         <div class="sixteen columns">
             <form action="" method="post">

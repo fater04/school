@@ -2,9 +2,9 @@
 //configuration base de donnee
 $database = array(
     "serveur" => "localhost",
-    "nom_base" => "ecole",
+    "nom_base" => "cfm",
     "utilisateur" => "root",
-    "motdepasse" => "root"
+    "motdepasse" => ""
 );
 
 //configuration email
@@ -26,7 +26,7 @@ $configuration = array(
     "url" => $_GET['url'],
     "database" => $database,
     "configurationEmail"=>$configurationEmail,
-    "dossierProjet" => "/Ecole",
+    "dossierProjet" => "/cfm",
     "nomApp" => "DefaultApp"
 );
 define("AUTHORIZENET_LOG_FILE", "phplog");
